@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import { Navbar } from "@/components/nav/Navbar";
 import Services from "@/components/sections/Services";
+import Offer from "@/components/sections/Offer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <div className="px-5 sm:px-10 max-w-7xl mx-auto w-full">
           <Services />
         </div>
+        <Offer />
       </div>
     </main>
   );
