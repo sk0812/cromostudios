@@ -3,6 +3,7 @@ import { Navbar } from "@/components/nav/Navbar";
 import Services from "@/components/sections/Services";
 import Offer from "@/components/sections/Offer";
 import Portfolio from "@/components/sections/Portfolio";
+import About from "@/components/sections/About";
 
 export default function Home() {
   return (
@@ -12,13 +13,10 @@ export default function Home() {
         <div className="relative">
           <Hero />
         </div>
-
-        <div className="px-5 sm:px-10 max-w-7xl mx-auto w-full">
-          <Services />
-        </div>
-
+        <Services />
         <Offer />
         <Portfolio />
+        <About />
       </div>
     </main>
   );

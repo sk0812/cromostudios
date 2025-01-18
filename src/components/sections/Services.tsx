@@ -82,11 +82,16 @@ const Services = () => {
           transition={{ duration: 0.5 }}
           className="flex flex-col gap-2 mb-16"
         >
-          <div className="flex items-center gap-2">
-            <span className="text-white/50">//</span>
-            <h2 className="text-4xl font-bold text-white">Our Services</h2>
+          <div className="flex items-center gap-2 mb-4">
+            <div className="h-px w-8 bg-white/20"></div>
+            <span className="text-white/50 uppercase tracking-wider text-sm font-medium">
+              Our Services
+            </span>
           </div>
-          <p className="text-white/50 text-lg ml-6">
+          <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">
+            Expert Web Solutions
+          </h2>
+          <p className="text-white/50 text-lg">
             We offer a comprehensive range of digital solutions to help your
             business grow online. <br />
             From design to development, we've got you covered.
