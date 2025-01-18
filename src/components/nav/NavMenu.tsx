@@ -5,9 +5,10 @@ import React from "react";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "Services", href: "#services" },
+  { name: "Projects", href: "#projects" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export const NavMenu = () => {
