@@ -17,11 +17,11 @@ export const ProfileGreeting = () => {
         className="relative w-24 h-24"
       >
         <Image
-          src="/profile.png"
-          alt="Avatar"
-          width={96}
-          height={96}
-          className="rounded-full"
+          src="/logo-white.png"
+          alt="Cromo Studios Logo"
+          width={120}
+          height={120}
+          className="rounded-full bg-black/20 p-2"
         />
       </motion.div>
       <motion.div
@@ -35,7 +35,7 @@ export const ProfileGreeting = () => {
         }}
         className="bg-zinc-800 px-8 py-4 rounded-full"
       >
-        <p className="text-white text-2xl">Hello, I'm Siddhanth</p>
+        <p className="text-white text-xl">Welcome to Cromo Studios</p>
       </motion.div>
     </div>
   );

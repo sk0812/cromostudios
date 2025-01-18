@@ -43,7 +43,7 @@ const Hero = () => {
               className="text-7xl font-bold leading-[1] inline-flex flex-col items-center gap-2"
             >
               <div className="flex items-center gap-4">
-                <span className="text-violet-400">DEVELOPER,</span>
+                <span className="text-violet-400">INNOVATIVE</span>
                 <div className="text-white/80 text-lg flex flex-col items-start gap-0 -mt-1">
                   <div>
                     <span className="text-white/50">//</span> Based in
@@ -51,21 +51,21 @@ const Hero = () => {
                   <div>London, UK</div>
                 </div>
               </div>
-              <span className="text-amber-400 -mt-2">DESIGNER,</span>
+              <span className="text-amber-400 -mt-2">WEB DESIGN</span>
               <div className="flex items-center gap-2 -mt-2">
-                <span className="text-slate-100">STUDENT</span>
+                <span className="text-slate-100">DEVELOPMENT</span>
                 <ConnectButton />
               </div>
               <div className="flex items-center gap-4 -mt-2">
                 <div className="flex flex-col items-start text-white/80 text-lg gap-0">
                   <div>
-                    <span className="text-white/50">//</span> Wordpress Designer
+                    <span className="text-white/50">//</span> Custom Solutions
                   </div>
-                  <div className="ml-4">Full-Stack Developer</div>
+                  <div className="ml-4">Digital Excellence</div>
                 </div>
                 <div className="flex items-center">
                   <span className="text-white">&</span>
-                  <span className="text-teal-400">&nbsp;ENTREPRENEUR.</span>
+                  <span className="text-teal-400">&nbsp;GROWTH.</span>
                 </div>
               </div>
             </motion.h1>

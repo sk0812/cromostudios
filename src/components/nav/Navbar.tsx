@@ -18,7 +18,7 @@ export const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="px-4 py-1.5 rounded-full border border-white/20 text-white/90"
           >
-            <span className="text-lg font-medium">Sid Kheria</span>
+            <span className="text-lg font-medium">Cromo Studios</span>
           </motion.div>
 
           {/* Navigation Menu */}

@@ -12,15 +12,13 @@ export const BottomText = () => {
         type: "spring",
         stiffness: 150,
       }}
-      className="mt-12 text-2xl"
+      className="mt-12 max-w-5xl text-2xl"
     >
-      Exploring opportunities at the intersection of
-      <span className="text-violet-400"> technology </span>
-      and
-      <span className="text-amber-400"> finance </span>
-      <br /> to drive innovation and create
-      <span className="text-teal-400"> meaningful </span>
-      impact.
+      We are architects of the digital world, where every pixel and block comes
+      together to shape an immersive experience which
+      <span className="text-amber-400"> captivates</span>,
+      <span className="text-violet-400"> connects</span>, and
+      <span className="text-teal-400"> inspires</span>.
     </motion.p>
   );
 };

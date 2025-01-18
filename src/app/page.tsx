@@ -1,6 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import { Navbar } from "@/components/nav/Navbar";
-import Technologies from "@/components/sections/Technologies";
+import Services from "@/components/sections/Services";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
         </div>
 
         <div className="px-5 sm:px-10 max-w-7xl mx-auto w-full">
-          <Technologies />
+          <Services />
         </div>
       </div>
     </main>
