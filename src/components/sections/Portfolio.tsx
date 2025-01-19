@@ -47,7 +47,7 @@ const projects = [
 export default function Portfolio() {
   return (
     <section
-      className="w-full py-20 relative bg-black"
+      className="w-full py-20 relative bg-black overflow-hidden"
       id="portfolio"
       aria-label="Portfolio Section"
     >
@@ -62,21 +62,21 @@ export default function Portfolio() {
         >
           <div className="flex items-center gap-2 mb-4">
             <div className="h-px w-8 bg-white/20"></div>
-            <span className="text-white/50 uppercase tracking-wider text-sm font-medium">
+            <span className="text-white/50 uppercase tracking-wider text-xs sm:text-sm font-medium">
               Portfolio
             </span>
           </div>
-          <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             Featured Projects
           </h2>
-          <p className="text-white/60 text-lg">
+          <p className="text-white/60 text-base sm:text-lg">
             Explore our latest work and see how we transform ideas into
             exceptional digital experiences.
           </p>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-20">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -84,10 +84,10 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
+              className="group w-full"
             >
               {/* Project Image */}
-              <div className="w-full relative aspect-[4/3] rounded-2xl overflow-hidden mb-8 bg-white/5">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-8 bg-white/5">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
                 <Image
                   src={project.image}
@@ -102,7 +102,7 @@ export default function Portfolio() {
 
               {/* Project Info */}
               <div className="space-y-4">
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 max-w-full">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -115,10 +115,10 @@ export default function Portfolio() {
 
                 <div className="flex justify-between items-start gap-4">
                   <div>
-                    <h3 className="text-2xl font-semibold text-white mb-3">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-3">
                       {project.title}
                     </h3>
-                    <p className="text-white/60 leading-relaxed">
+                    <p className="text-white/60 text-sm sm:text-base leading-relaxed">
                       {project.description}
                     </p>
                   </div>

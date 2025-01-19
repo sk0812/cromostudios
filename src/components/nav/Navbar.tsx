@@ -30,17 +30,19 @@ export const Navbar = () => {
         backdropFilter: backdropBlur,
         borderBottom: `1px solid rgba(255, 255, 255, ${borderOpacity.get()})`,
       }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-200"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-200 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-        <div className="flex items-center justify-between w-full">
+        <div className="flex items-center justify-between w-full gap-4">
           {/* Logo/Name */}
           <Link href="/">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="px-4 py-1.5 rounded-full border border-white/20 text-white/90"
+              className="px-3 sm:px-4 py-1.5 rounded-full border border-white/20 text-white/90"
             >
-              <span className="text-lg font-medium">Cromo Studios</span>
+              <span className="text-base sm:text-lg font-medium">
+                Cromo Studios
+              </span>
             </motion.div>
           </Link>
 

@@ -80,7 +80,10 @@ export default function About() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="w-full py-20 relative bg-black" id="about">
+    <section
+      className="w-full py-20 relative bg-black overflow-hidden"
+      id="about"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -107,7 +110,7 @@ export default function About() {
               commitment to excellence, we&apos;ve helped numerous businesses
               establish a powerful online presence.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-6 border-y border-white/5">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 py-6 border-y border-white/5">
               <div>
                 <h4 className="text-white font-semibold mb-1">Our Mission</h4>
                 <p className="text-white/60 text-sm leading-relaxed">
@@ -148,9 +151,9 @@ export default function About() {
                   <h4 className="text-white font-semibold mb-4 px-4">
                     Development Process
                   </h4>
-                  <ul className="steps steps-vertical w-full">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
                     {processSteps.map((step, index) => (
-                      <li
+                      <div
                         key={step.title}
                         onClick={() => setActiveStep(index)}
                         className={`step cursor-pointer transition-all duration-300 
@@ -188,9 +191,9 @@ export default function About() {
                             {step.title}
                           </h4>
                         </div>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
                 <div className="mt-4 px-4 pt-3 border-t border-white/5">
                   <p className="text-white/40 text-sm">

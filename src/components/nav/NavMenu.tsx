@@ -13,13 +13,13 @@ const navItems = [
 
 export const NavMenu = () => {
   return (
-    <div className="hidden md:flex items-center px-6 py-2 border border-white/40 rounded-full">
+    <div className="hidden md:flex items-center px-4 lg:px-6 py-2 border border-white/40 rounded-full overflow-hidden">
       {navItems.map((item, index) => (
         <React.Fragment key={item.name}>
           <motion.div whileHover={{ y: -2 }} className="relative group">
             <Link
               href={item.href}
-              className="text-white/70 hover:text-white transition-colors duration-200"
+              className="text-sm lg:text-base text-white/70 hover:text-white transition-colors duration-200"
             >
               {item.name}
             </Link>
@@ -29,7 +29,7 @@ export const NavMenu = () => {
             />
           </motion.div>
           {index !== navItems.length - 1 && (
-            <span className="mx-4 text-white/40">|</span>
+            <span className="mx-2 lg:mx-4 text-white/40">|</span>
           )}
         </React.Fragment>
       ))}

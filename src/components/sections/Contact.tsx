@@ -73,7 +73,10 @@ export default function Contact() {
   };
 
   return (
-    <section className="w-full py-20 relative bg-black" id="contact">
+    <section
+      className="w-full py-20 relative bg-black overflow-hidden"
+      id="contact"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -85,42 +88,42 @@ export default function Contact() {
         >
           <div className="flex items-center gap-2 mb-4">
             <div className="h-px w-8 bg-white/20"></div>
-            <span className="text-white/50 uppercase tracking-wider text-sm font-medium">
+            <span className="text-white/50 uppercase tracking-wider text-xs sm:text-sm font-medium">
               Contact Us
             </span>
           </div>
-          <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             Let&apos;s Build Something Amazing
           </h2>
-          <p className="text-white/70 text-lg">
+          <p className="text-white/70 text-base sm:text-lg">
             Ready to transform your digital presence? Get in touch with us and
             let&apos;s discuss how we can help your business grow.
           </p>
         </motion.div>
 
         {/* Contact Grid */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="h-full"
+            className="w-full h-full"
           >
             <div className="h-full p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm flex flex-col">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="p-3 rounded-xl bg-black/50 border border-white/10 text-white/70">
-                  <Mail className="w-6 h-6" />
+              <div className="flex items-center gap-4 mb-6 sm:mb-8">
+                <div className="p-2 sm:p-3 rounded-xl bg-black/50 border border-white/10 text-white/70">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-lg sm:text-xl font-semibold text-white">
                   Send us a Message
                 </h3>
               </div>
 
               <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
-                <div className="flex-1 space-y-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="flex-1 space-y-6 sm:space-y-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                     <div className="form-control w-full">
                       <input
                         type="text"
@@ -246,7 +249,7 @@ export default function Contact() {
             </div>
 
             {/* Additional Info */}
-            <div className="flex-1 p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="flex-1 p-4 sm:p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
               <h3 className="text-xl font-semibold text-white mb-6">
                 Why Choose Us?
               </h3>

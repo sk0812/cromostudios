@@ -47,14 +47,14 @@ export default function Home() {
   };
 
   return (
-    <main className="relative bg-black pt-20">
+    <main className="relative bg-black pt-20 overflow-x-hidden w-full">
       <Script
         id="json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
-      <div className="w-full">
+      <div className="w-full overflow-x-hidden">
         <div className="relative">
           <Hero />
         </div>
