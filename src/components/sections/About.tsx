@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Rocket, Search, Zap } from "lucide-react";
 import { useState } from "react";
-
+import Link from "next/link";
 const processSteps = [
   {
     title: "Discovery & Strategy",
@@ -263,13 +263,13 @@ export default function About() {
           viewport={{ once: true }}
           className="flex justify-center mt-24"
         >
-          <a
+          <Link
             href="#contact"
             className="group inline-flex items-center gap-3 px-8 py-4 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition-colors"
           >
             <span className="text-white font-medium">Start Your Project</span>
             <ArrowRight className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
