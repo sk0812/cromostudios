@@ -72,7 +72,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="w-full py-20 relative" id="services">
+    <section className="w-full py-20 relative bg-black" id="services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <motion.div

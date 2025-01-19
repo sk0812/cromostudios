@@ -6,17 +6,17 @@ import Link from "next/link";
 const socialLinks = [
   {
     name: "WhatsApp",
-    href: "https://wa.me/447123456789",
+    href: "https://wa.me/447724280130",
     icon: MessageCircle,
   },
   {
     name: "Instagram",
-    href: "https://instagram.com",
+    href: "https://instagram.com/cromowebstudios",
     icon: Instagram,
   },
   {
     name: "Email",
-    href: "mailto:hello@cromostudios.com",
+    href: "mailto:info@cromostudios.com",
     icon: Mail,
   },
 ];

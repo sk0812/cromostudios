@@ -47,7 +47,7 @@ const projects = [
 export default function Portfolio() {
   return (
     <section
-      className="w-full py-32 relative bg-black"
+      className="w-full py-20 relative bg-black"
       id="portfolio"
       aria-label="Portfolio Section"
     >

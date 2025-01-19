@@ -6,7 +6,7 @@ export const SocialIcons = () => {
   return (
     <div className="flex items-center gap-6">
       <motion.a
-        href="https://wa.me/+447123456789" // Replace with your WhatsApp number
+        href="https://wa.me/+447724280130" // Replace with your WhatsApp number
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ y: -2, color: "rgb(255 255 255)" }}
@@ -17,7 +17,7 @@ export const SocialIcons = () => {
         </svg>
       </motion.a>
       <motion.a
-        href="https://instagram.com/cromostudios" // Replace with your Instagram handle
+        href="https://instagram.com/cromowebstudios" // Replace with your Instagram handle
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ y: -2, color: "rgb(255 255 255)" }}
@@ -28,7 +28,7 @@ export const SocialIcons = () => {
         </svg>
       </motion.a>
       <motion.a
-        href="mailto:contact@cromostudios.com"
+        href="mailto:info@cromostudios.com"
         whileHover={{ y: -2, color: "rgb(255 255 255)" }}
         className="cursor-pointer text-white/70"
       >

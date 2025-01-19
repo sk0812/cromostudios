@@ -27,9 +27,9 @@ export default function Home() {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+44-7123-456-789",
+        telephone: "+447724280130",
         contactType: "customer service",
-        email: "hello@cromostudios.com",
+        email: "info@cromostudios.com",
       },
       sameAs: [
         "https://instagram.com/cromostudios",

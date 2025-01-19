@@ -7,7 +7,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: "hello@cromostudios.com",
+    details: "info@cromostudios.com",
     color: "text-violet-500",
     bgColor: "bg-violet-950/40",
     borderColor: "border-violet-500/20",
@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    details: "+44 7123 456 789",
+    details: "+44 7724 280 130",
     color: "text-emerald-500",
     bgColor: "bg-emerald-950/40",
     borderColor: "border-emerald-500/20",
@@ -24,7 +24,7 @@ const contactInfo = [
 
 export default function Contact() {
   return (
-    <section className="w-full py-32 relative bg-black" id="contact">
+    <section className="w-full py-20 relative bg-black" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
