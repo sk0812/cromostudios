@@ -5,6 +5,7 @@ import Offer from "@/components/sections/Offer";
 import Portfolio from "@/components/sections/Portfolio";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Portfolio />
         <About />
         <Contact />
+        <Footer />
       </div>
     </main>
   );
