@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, Send } from "lucide-react";
+import { useState } from "react";
 
 const contactInfo = [
   {
@@ -23,6 +24,54 @@ const contactInfo = [
 ];
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "Failed to send message"
+      );
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <section className="w-full py-20 relative bg-black" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,20 +117,29 @@ export default function Contact() {
                   Send us a Message
                 </h3>
               </div>
-              <form className="flex-1 flex flex-col">
+
+              <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
                 <div className="flex-1 space-y-8">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     <div className="form-control w-full">
                       <input
                         type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         placeholder="Name"
+                        required
                         className="w-full bg-transparent border-b border-white/10 py-3 text-white/90 placeholder:text-white/30 focus:border-white/30 focus:outline-none transition-colors"
                       />
                     </div>
                     <div className="form-control w-full">
                       <input
                         type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder="Email"
+                        required
                         className="w-full bg-transparent border-b border-white/10 py-3 text-white/90 placeholder:text-white/30 focus:border-white/30 focus:outline-none transition-colors"
                       />
                     </div>
@@ -90,24 +148,61 @@ export default function Contact() {
                   <div className="form-control w-full">
                     <input
                       type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       placeholder="Subject"
+                      required
                       className="w-full bg-transparent border-b border-white/10 py-3 text-white/90 placeholder:text-white/30 focus:border-white/30 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div className="form-control w-full">
                     <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Tell us about your project..."
+                      required
                       rows={4}
                       className="w-full bg-transparent border-b border-white/10 py-3 text-white/90 placeholder:text-white/30 focus:border-white/30 focus:outline-none transition-colors resize-none"
                     />
                   </div>
                 </div>
 
+                {status === "error" && (
+                  <div className="mt-4 p-4 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-500">
+                    {errorMessage}
+                  </div>
+                )}
+
+                {status === "success" && (
+                  <div className="mt-4 p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-500">
+                    Message sent successfully! We&apos;ll get back to you soon.
+                  </div>
+                )}
+
                 <div className="pt-8">
-                  <button className="group flex items-center gap-2 px-6 py-3 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 hover:border-white/30 transition-colors">
-                    <span className="text-white font-medium">Send Message</span>
-                    <Send className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="group flex items-center gap-2 px-6 py-3 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 hover:border-white/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {status === "loading" ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white/30 border-t-white/90 rounded-full animate-spin" />
+                        <span className="text-white font-medium">
+                          Sending...
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="text-white font-medium">
+                          Send Message
+                        </span>
+                        <Send className="w-4 h-4 text-white transition-transform group-hover:translate-x-1" />
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
