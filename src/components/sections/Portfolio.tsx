@@ -9,7 +9,7 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "A modern e-commerce platform built with Wordpress and Woocommerce. Features include real-time inventory, dynamic product filtering, and seamless checkout.",
-    image: "/portfolio/cricketarmoury.webp",
+    image: "/portfolio/cricketarmoury.png",
     altText:
       "Cricket Armoury E-commerce Website - Cricket Equipment Online Store",
     tags: ["Wordpress", "Woocommerce", "Brizy", "Stripe"],
@@ -19,7 +19,7 @@ const projects = [
     title: "Tutoring Website",
     description:
       "A comprehensive tutoring website built with Next.js and Tailwind CSS. Features include user authentication, email service with dashboards for admins and prospective students.",
-    image: "/portfolio/vidyalearning.webp",
+    image: "/portfolio/vidyalearning.png",
     altText: "Vidya Learning Platform - Online Tutoring Website",
     tags: ["Next.js", "Tailwind CSS", "Supabase", "Framer Motion"],
     liveUrl: "https://vidya-learning-red.vercel.app/",
@@ -28,7 +28,7 @@ const projects = [
     title: "Childcare Website & Management System",
     description:
       "A childcare website and management system built with Next.js and Tailwind CSS. Features include user authentication, database management, and a dashboard for managing children and staff.",
-    image: "/portfolio/kidshive.webp",
+    image: "/portfolio/kidshive.png",
     altText: "Kids Hive - Childcare Management System and Website",
     tags: ["Next.js", "DaisyUI", "MongoDB", "Resend"],
     liveUrl: "https://kidshive.co.uk/",
@@ -37,7 +37,7 @@ const projects = [
     title: "Citizenship & Residency Website",
     description:
       "A professional citizenship and residency website built with Next.js and Tailwind CSS. Features include responsive design, animations, and a contact form.",
-    image: "/portfolio/windsorcm.webp",
+    image: "/portfolio/windsorcm.png",
     altText: "Windsor - Citizenship and Residency Services Website",
     tags: ["Next.js", "DaisyUI", "Framer Motion", "Resend"],
     liveUrl: "/",

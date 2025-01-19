@@ -16,7 +16,6 @@ const Hero = () => {
           width={70}
           maxOpacity={0.1}
           duration={2}
-          repeatDelay={1}
           className={cn(
             "absolute inset-0 w-full h-full",
             "[mask-image:radial-gradient(ellipse_at_center,white,transparent)]"

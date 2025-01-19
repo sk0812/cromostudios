@@ -48,7 +48,7 @@ export default function Offer() {
           >
             <div className="rounded-[2rem] overflow-hidden relative h-full">
               <Image
-                src="/offer-img.webp"
+                src="/offer-img.png"
                 alt="Cromo Studios Development Team at Work"
                 fill
                 className="object-cover"
@@ -185,13 +185,13 @@ function FeatureCard({
   return (
     <motion.div
       variants={item}
-      className="card bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300"
+      className="card bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 rounded-xl"
       role="listitem"
     >
       <div className="card-body p-5">
         <div className="flex gap-4 items-start">
           <div
-            className="w-10 h-10 rounded-xl bg-black border border-white/10 flex items-center justify-center flex-shrink-0"
+            className="w-10 h-10 rounded-lg bg-black border border-white/10 flex items-center justify-center flex-shrink-0"
             aria-hidden="true"
           >
             <Icon className={`w-5 h-5 ${iconColor}`} />

@@ -11,6 +11,20 @@ export const metadata: Metadata = {
     "Transform your business with custom web development, e-commerce solutions, and digital excellence. London-based agency specializing in modern web design and development.",
   keywords:
     "web development, web design, e-commerce, SEO, digital agency, London, custom websites, React development, Next.js",
+  icons: {
+    icon: [
+      {
+        url: "/logo-black.png",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/logo-black.png",
+        type: "image/png",
+      },
+    ],
+  },
   openGraph: {
     title: "Cromo Studios | Modern Web Development & Design Agency",
     description:
