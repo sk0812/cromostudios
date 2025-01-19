@@ -8,9 +8,8 @@ import { BottomText } from "../hero/BottomText";
 
 const Hero = () => {
   return (
-    <>
-      {/* Animated background only for hero */}
-      <div className="absolute inset-0 w-full h-full">
+    <section aria-label="Hero Section" className="relative">
+      <div className="absolute inset-0 w-full h-full" aria-hidden="true">
         <AnimatedGridPattern
           numSquares={40}
           height={70}
@@ -29,8 +28,7 @@ const Hero = () => {
         <div className="flex-1 flex flex-col justify-center items-center relative z-10 text-center max-w-7xl mx-auto px-4">
           <ProfileGreeting />
 
-          {/* Main Title with Positioned Elements */}
-          <div className="relative text-center">
+          <header className="relative text-center">
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -70,12 +68,12 @@ const Hero = () => {
                 </div>
               </div>
             </motion.h1>
-          </div>
+          </header>
 
           <BottomText />
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -12,6 +12,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const container = {
   hidden: { opacity: 0 },
@@ -30,7 +31,11 @@ const item = {
 
 export default function Offer() {
   return (
-    <section className="w-full py-20 relative bg-black">
+    <section
+      className="w-full py-20 relative bg-black"
+      id="offer"
+      aria-label="Services Offer"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* Left side - Image */}
@@ -44,10 +49,11 @@ export default function Offer() {
             <div className="rounded-[2rem] overflow-hidden relative h-full">
               <Image
                 src="/offer-img.webp"
-                alt="Cromo Studios Team"
+                alt="Cromo Studios Development Team at Work"
                 fill
                 className="object-cover"
                 priority
+                quality={90}
               />
             </div>
           </motion.div>
@@ -61,7 +67,7 @@ export default function Offer() {
             className="space-y-6"
           >
             {/* Header Section */}
-            <div className="relative">
+            <header className="relative">
               <div className="relative z-10">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -75,26 +81,26 @@ export default function Offer() {
                       Digital Excellence
                     </span>
                   </h2>
-                  <div className=" text-gray-300">
-                    <div>
-                      <p className="text-lg">
-                        Professional web development tailored for your business.
-                        From concept to completion, we deliver premium solutions
-                        with flexible monthly plans.{" "}
-                      </p>
-                    </div>
+                  <div className="text-gray-300">
+                    <p className="text-lg">
+                      Professional web development tailored for your business.
+                      From concept to completion, we deliver premium solutions
+                      with flexible monthly plans.
+                    </p>
                   </div>
                 </motion.div>
               </div>
-            </div>
+            </header>
 
-            {/* Features Grid with Cards */}
+            {/* Features Grid */}
             <motion.div
               variants={container}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
               className="grid grid-cols-1 md:grid-cols-2 gap-4"
+              role="list"
+              aria-label="Features"
             >
               <FeatureCard
                 icon={Shield}
@@ -142,10 +148,10 @@ export default function Offer() {
               className="pt-2"
             >
               <div className="flex flex-col items-start gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                <Link
+                  href="#contact"
                   className="relative group"
+                  aria-label="Schedule a consultation call"
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-violet-400 to-amber-400 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200" />
                   <div className="relative flex items-center gap-2 px-8 py-4 bg-black border border-white/10 rounded-lg transition-all duration-200">
@@ -155,7 +161,7 @@ export default function Offer() {
                     <div className="w-px h-6 bg-white/10" />
                     <ArrowRight className="w-5 h-5 text-white transition-transform duration-200 group-hover:translate-x-1" />
                   </div>
-                </motion.button>
+                </Link>
               </div>
             </motion.div>
           </motion.div>
@@ -180,10 +186,14 @@ function FeatureCard({
     <motion.div
       variants={item}
       className="card bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300"
+      role="listitem"
     >
       <div className="card-body p-5">
         <div className="flex gap-4 items-start">
-          <div className="w-10 h-10 rounded-xl bg-black border border-white/10 flex items-center justify-center flex-shrink-0">
+          <div
+            className="w-10 h-10 rounded-xl bg-black border border-white/10 flex items-center justify-center flex-shrink-0"
+            aria-hidden="true"
+          >
             <Icon className={`w-5 h-5 ${iconColor}`} />
           </div>
           <div>

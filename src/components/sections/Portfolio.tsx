@@ -10,6 +10,8 @@ const projects = [
     description:
       "A modern e-commerce platform built with Wordpress and Woocommerce. Features include real-time inventory, dynamic product filtering, and seamless checkout.",
     image: "/portfolio/cricketarmoury.webp",
+    altText:
+      "Cricket Armoury E-commerce Website - Cricket Equipment Online Store",
     tags: ["Wordpress", "Woocommerce", "Brizy", "Stripe"],
     liveUrl: "https://cricketarmoury.com",
   },
@@ -18,6 +20,7 @@ const projects = [
     description:
       "A comprehensive tutoring website built with Next.js and Tailwind CSS. Features include user authentication, email service with dashboards for admins and prospective students.",
     image: "/portfolio/vidyalearning.webp",
+    altText: "Vidya Learning Platform - Online Tutoring Website",
     tags: ["Next.js", "Tailwind CSS", "Supabase", "Framer Motion"],
     liveUrl: "https://vidya-learning-red.vercel.app/",
   },
@@ -26,6 +29,7 @@ const projects = [
     description:
       "A childcare website and management system built with Next.js and Tailwind CSS. Features include user authentication, database management, and a dashboard for managing children and staff.",
     image: "/portfolio/kidshive.webp",
+    altText: "Kids Hive - Childcare Management System and Website",
     tags: ["Next.js", "DaisyUI", "MongoDB", "Resend"],
     liveUrl: "https://kidshive.co.uk/",
   },
@@ -34,6 +38,7 @@ const projects = [
     description:
       "A professional citizenship and residency website built with Next.js and Tailwind CSS. Features include responsive design, animations, and a contact form.",
     image: "/portfolio/windsorcm.webp",
+    altText: "Windsor - Citizenship and Residency Services Website",
     tags: ["Next.js", "DaisyUI", "Framer Motion", "Resend"],
     liveUrl: "/",
   },
@@ -41,7 +46,11 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section className="w-full py-32 relative bg-black" id="portfolio">
+    <section
+      className="w-full py-32 relative bg-black"
+      id="portfolio"
+      aria-label="Portfolio Section"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -82,10 +91,12 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={project.altText}
                   fill
                   className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
+                  loading="lazy"
+                  quality={90}
                 />
               </div>
 
