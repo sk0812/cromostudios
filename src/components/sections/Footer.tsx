@@ -81,18 +81,18 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="mailto:hello@cromostudios.com"
+                    href="mailto:info@cromostudios.com"
                     className="text-white/60 hover:text-white transition-colors"
                   >
-                    hello@cromostudios.com
+                    info@cromostudios.com
                   </a>
                 </li>
                 <li>
                   <a
-                    href="tel:+447123456789"
+                    href="tel:+447724280130"
                     className="text-white/60 hover:text-white transition-colors"
                   >
-                    +44 7123 456 789
+                    +44 7724 280 130
                   </a>
                 </li>
                 <li>

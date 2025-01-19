@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative bg-black">
+    <main className="relative bg-black pt-28">
       <Script
         id="json-ld"
         type="application/ld+json"

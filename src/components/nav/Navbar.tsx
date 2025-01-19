@@ -1,15 +1,44 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { NavMenu } from "./NavMenu";
 import { SocialIcons } from "./SocialIcons";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
+  const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const height = useTransform(scrollY, [0, 100], ["7rem", "5rem"]);
+  const background = useTransform(
+    scrollY,
+    [0, 100],
+    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.5)"]
+  );
+  const backdropBlur = useTransform(
+    scrollY,
+    [0, 100],
+    ["blur(0px)", "blur(12px)"]
+  );
+  const borderOpacity = useTransform(scrollY, [0, 100], [0, 0.1]);
+
+  useEffect(() => {
+    const unsubscribe = scrollY.onChange((latest) => {
+      setIsScrolled(latest > 0);
+    });
+    return () => unsubscribe();
+  }, [scrollY]);
+
   return (
     <motion.nav
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="h-28 relative z-50"
+      style={{
+        height,
+        background,
+        backdropFilter: backdropBlur,
+        borderBottom: `1px solid rgba(255, 255, 255, ${borderOpacity.get()})`,
+      }}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
         <div className="flex items-center justify-between w-full">
