@@ -24,7 +24,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="h-[calc(100vh-7rem)] flex flex-col relative">
+      <div className="h-[calc(100vh-5rem)] flex flex-col relative">
         <div className="flex-1 flex flex-col justify-center items-center relative z-10 text-center max-w-7xl mx-auto px-4">
           <ProfileGreeting />
 

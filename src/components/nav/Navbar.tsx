@@ -2,11 +2,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { NavMenu } from "./NavMenu";
 import { SocialIcons } from "./SocialIcons";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export const Navbar = () => {
   const { scrollY } = useScroll();
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const height = useTransform(scrollY, [0, 100], ["7rem", "5rem"]);
   const background = useTransform(
@@ -20,13 +19,6 @@ export const Navbar = () => {
     ["blur(0px)", "blur(12px)"]
   );
   const borderOpacity = useTransform(scrollY, [0, 100], [0, 0.1]);
-
-  useEffect(() => {
-    const unsubscribe = scrollY.onChange((latest) => {
-      setIsScrolled(latest > 0);
-    });
-    return () => unsubscribe();
-  }, [scrollY]);
 
   return (
     <motion.nav
@@ -43,12 +35,14 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
         <div className="flex items-center justify-between w-full">
           {/* Logo/Name */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="px-4 py-1.5 rounded-full border border-white/20 text-white/90"
-          >
-            <span className="text-lg font-medium">Cromo Studios</span>
-          </motion.div>
+          <Link href="/">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="px-4 py-1.5 rounded-full border border-white/20 text-white/90"
+            >
+              <span className="text-lg font-medium">Cromo Studios</span>
+            </motion.div>
+          </Link>
 
           {/* Navigation Menu */}
           <NavMenu />

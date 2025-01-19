@@ -8,7 +8,7 @@ export const ConnectButton = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link href="/contact" rel="noopener noreferrer">
+    <Link href="#contact" rel="noopener noreferrer">
       <motion.div
         whileTap={{ scale: 0.98 }}
         onHoverStart={() => setIsHovered(true)}
