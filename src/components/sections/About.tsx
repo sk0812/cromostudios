@@ -104,7 +104,7 @@ export default function About() {
               We are a team of passionate developers, designers, and digital
               strategists dedicated to transforming businesses through
               innovative web solutions. With years of experience and a
-              commitment to excellence, we've helped numerous businesses
+              commitment to excellence, we&apos;ve helped numerous businesses
               establish a powerful online presence.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-6 border-y border-white/5">

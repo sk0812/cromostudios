@@ -94,7 +94,7 @@ const Services = () => {
           <p className="text-white/50 text-lg">
             We offer a comprehensive range of digital solutions to help your
             business grow online. <br />
-            From design to development, we've got you covered.
+            From design to development, we&apos;ve got you covered.
           </p>
         </motion.div>
 

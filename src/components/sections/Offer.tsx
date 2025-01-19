@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  CheckCircle2,
   ArrowRight,
   Sparkles,
   Shield,
@@ -10,6 +9,7 @@ import {
   Award,
   Headphones,
   Search,
+  LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -171,7 +171,7 @@ function FeatureCard({
   description,
   iconColor,
 }: {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   description: string;
   iconColor: string;

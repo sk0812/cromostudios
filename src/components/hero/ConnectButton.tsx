@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { PhoneCall, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 

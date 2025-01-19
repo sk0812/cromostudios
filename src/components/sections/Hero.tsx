@@ -46,7 +46,7 @@ const Hero = () => {
                 <span className="text-violet-400">INNOVATIVE</span>
                 <div className="text-white/80 text-lg flex flex-col items-start gap-0 -mt-1">
                   <div>
-                    <span className="text-white/50">//</span> Based in
+                    <span className="text-white/50">{"//"}</span> Based in
                   </div>
                   <div>London, UK</div>
                 </div>
@@ -59,7 +59,8 @@ const Hero = () => {
               <div className="flex items-center gap-4 -mt-2">
                 <div className="flex flex-col items-start text-white/80 text-lg gap-0">
                   <div>
-                    <span className="text-white/50">//</span> Custom Solutions
+                    <span className="text-white/50">{"//"}</span> Custom
+                    Solutions
                   </div>
                   <div className="ml-4">Digital Excellence</div>
                 </div>

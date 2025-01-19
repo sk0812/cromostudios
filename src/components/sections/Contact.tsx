@@ -41,11 +41,11 @@ export default function Contact() {
             </span>
           </div>
           <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">
-            Let's Build Something Amazing
+            Let&apos;s Build Something Amazing
           </h2>
           <p className="text-white/70 text-lg">
             Ready to transform your digital presence? Get in touch with us and
-            let's discuss how we can help your business grow.
+            let&apos;s discuss how we can help your business grow.
           </p>
         </motion.div>
 
