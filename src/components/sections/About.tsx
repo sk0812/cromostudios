@@ -146,56 +146,58 @@ export default function About() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 min-h-[400px]">
             {/* Steps Navigation */}
             <div className="w-full lg:w-1/3">
-              <div className="h-full p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm flex flex-col justify-between">
+              <div className="h-full p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm flex flex-col justify-between">
                 <div>
-                  <h4 className="text-white font-semibold mb-4 px-4">
+                  <h4 className="text-xl font-semibold text-white mb-8">
                     Development Process
                   </h4>
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+                  <div className="grid grid-cols-1 gap-6">
                     {processSteps.map((step, index) => (
                       <div
                         key={step.title}
                         onClick={() => setActiveStep(index)}
-                        className={`step cursor-pointer transition-all duration-300 
-                          ${index <= activeStep ? step.color : "text-white/20"}
-                          ${index === activeStep ? "!text-white" : ""}
-                          before:!bg-white/10 after:!bg-white/10
-                          hover:text-white
-                          ${
-                            index === activeStep
-                              ? "before:!bg-gradient-to-r before:!from-transparent before:!via-white/20 before:!to-transparent"
-                              : ""
-                          }`}
+                        className={`cursor-pointer transition-all duration-300 ${
+                          index === activeStep ? "scale-[1.02]" : ""
+                        }`}
                       >
                         <div
-                          className={`text-left ml-4 p-2 rounded-lg transition-colors ${
-                            index === activeStep ? "bg-white/5" : ""
-                          }`}
+                          className={`p-4 rounded-xl border ${
+                            index === activeStep
+                              ? step.borderColor
+                              : "border-white/10"
+                          } ${
+                            index === activeStep ? step.bgColor : "bg-black/50"
+                          } backdrop-blur-sm`}
                         >
-                          <span
-                            className={`text-sm font-medium ${
-                              index === activeStep
-                                ? "text-white/80"
-                                : "text-white/40"
-                            }`}
-                          >
+                          <div className="text-sm text-white/40 mb-1">
                             Phase {index + 1}
-                          </span>
-                          <h4
-                            className={`text-lg font-semibold mt-0.5 ${
-                              index === activeStep
-                                ? "text-white"
-                                : "text-white/60"
-                            }`}
-                          >
-                            {step.title}
-                          </h4>
+                          </div>
+                          <div className="flex flex-col">
+                            <h5
+                              className={`text-lg font-semibold ${
+                                index === activeStep
+                                  ? "text-white"
+                                  : "text-white/60"
+                              }`}
+                            >
+                              {step.title.split(" & ")[0]}
+                            </h5>
+                            <h5
+                              className={`text-lg font-semibold ${
+                                index === activeStep
+                                  ? "text-white"
+                                  : "text-white/60"
+                              }`}
+                            >
+                              & {step.title.split(" & ")[1]}
+                            </h5>
+                          </div>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="mt-4 px-4 pt-3 border-t border-white/5">
+                <div className="mt-6 px-4 pt-4 border-t border-white/5">
                   <p className="text-white/40 text-sm">
                     Click on any phase to learn more about our process
                   </p>
