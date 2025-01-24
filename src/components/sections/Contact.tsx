@@ -12,6 +12,7 @@ const contactInfo = [
     color: "text-violet-500",
     bgColor: "bg-violet-950/40",
     borderColor: "border-violet-500/20",
+    href: "mailto:info@cromostudios.com",
   },
   {
     icon: Phone,
@@ -20,6 +21,7 @@ const contactInfo = [
     color: "text-emerald-500",
     bgColor: "bg-emerald-950/40",
     borderColor: "border-emerald-500/20",
+    href: "tel:+447724280130",
   },
 ];
 
@@ -88,14 +90,14 @@ export default function Contact() {
         >
           <div className="flex items-center gap-2 mb-4">
             <div className="h-px w-8 bg-white/20"></div>
-            <span className="text-white/50 uppercase tracking-wider text-xs sm:text-sm font-medium">
+            <span className="text-white/50 uppercase tracking-wider text-sm font-medium">
               Contact Us
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
+          <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">
             Let&apos;s Build Something Amazing
           </h2>
-          <p className="text-white/70 text-base sm:text-lg">
+          <p className="text-white/70 text-lg">
             Ready to transform your digital presence? Get in touch with us and
             let&apos;s discuss how we can help your business grow.
           </p>
@@ -112,18 +114,18 @@ export default function Contact() {
             className="w-full h-full"
           >
             <div className="h-full p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm flex flex-col">
-              <div className="flex items-center gap-4 mb-6 sm:mb-8">
-                <div className="p-2 sm:p-3 rounded-xl bg-black/50 border border-white/10 text-white/70">
-                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-3 rounded-xl bg-black/50 border border-white/10 text-white/70">
+                  <Mail className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold text-white">
                   Send us a Message
                 </h3>
               </div>
 
               <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
-                <div className="flex-1 space-y-6 sm:space-y-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                <div className="flex-1 space-y-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     <div className="form-control w-full">
                       <input
                         type="text"
@@ -229,11 +231,11 @@ export default function Contact() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`p-6 rounded-2xl border ${info.borderColor} ${info.bgColor} backdrop-blur-sm`}
+                  className={`p-6 rounded-2xl border ${info.borderColor} ${info.bgColor} backdrop-blur-sm group hover:border-white/20 transition-all duration-300`}
                 >
                   <div className="flex items-center gap-6">
                     <div
-                      className={`p-4 rounded-xl bg-black/50 border border-white/10 ${info.color}`}
+                      className={`p-4 rounded-xl bg-black/50 border border-white/10 ${info.color} group-hover:scale-105 transition-transform duration-300`}
                     >
                       <info.icon className="w-6 h-6" />
                     </div>
@@ -241,7 +243,13 @@ export default function Contact() {
                       <h3 className="text-lg font-semibold text-white mb-1">
                         {info.title}
                       </h3>
-                      <p className="text-white/70">{info.details}</p>
+                      <motion.a
+                        href={info.href}
+                        className="text-white/70 hover:text-white transition-colors inline-block"
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        {info.details}
+                      </motion.a>
                     </div>
                   </div>
                 </motion.div>
