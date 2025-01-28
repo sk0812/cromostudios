@@ -22,6 +22,28 @@ const processSteps = [
       "Technology stack recommendations",
       "Budget optimization & resource planning",
     ],
+    faq: [
+      {
+        question: "How long does the discovery phase typically take?",
+        answer:
+          "The discovery phase usually takes 1-2 weeks, depending on project complexity and client availability.",
+      },
+      {
+        question: "What information do you need from me to start?",
+        answer:
+          "We'll need your business goals, target audience, current challenges, and any existing brand guidelines or materials.",
+      },
+      {
+        question: "Do you provide competitor analysis?",
+        answer:
+          "Yes, we conduct thorough competitor analysis to identify opportunities and position your business effectively.",
+      },
+      {
+        question: "How do you determine the project budget?",
+        answer:
+          "We assess your requirements, scope, and timeline to provide detailed cost breakdowns and flexible payment options.",
+      },
+    ],
   },
   {
     title: "Design & Development",
@@ -38,6 +60,28 @@ const processSteps = [
       "API integration & backend setup",
       "Content management system setup",
       "Database design & optimization",
+    ],
+    faq: [
+      {
+        question: "What design tools do you use?",
+        answer:
+          "We use industry-standard tools like Figma for design and prototyping, ensuring smooth collaboration.",
+      },
+      {
+        question: "How do you ensure mobile responsiveness?",
+        answer:
+          "We follow a mobile-first approach and test across multiple devices and screen sizes.",
+      },
+      {
+        question: "Can I request changes during development?",
+        answer:
+          "Yes, we have an iterative process with regular check-ins for feedback and revisions.",
+      },
+      {
+        question: "What technologies do you work with?",
+        answer:
+          "We specialize in modern frameworks like React, Next.js, and Node.js, choosing the best stack for your needs.",
+      },
     ],
   },
   {
@@ -56,6 +100,28 @@ const processSteps = [
       "Load testing & scalability checks",
       "User acceptance testing",
     ],
+    faq: [
+      {
+        question: "What types of testing do you perform?",
+        answer:
+          "We conduct performance, security, compatibility, and user acceptance testing.",
+      },
+      {
+        question: "How do you optimize for search engines?",
+        answer:
+          "We implement technical SEO best practices and optimize content structure and metadata.",
+      },
+      {
+        question: "What security measures do you implement?",
+        answer:
+          "We follow security best practices, including SSL, data encryption, and regular security audits.",
+      },
+      {
+        question: "How do you measure site performance?",
+        answer:
+          "We use tools like Lighthouse and GTmetrix to measure and optimize loading speeds and core web vitals.",
+      },
+    ],
   },
   {
     title: "Launch & Support",
@@ -72,6 +138,28 @@ const processSteps = [
       "24/7 technical support access",
       "Content updates & management",
       "Monthly performance reports",
+    ],
+    faq: [
+      {
+        question: "What's included in ongoing support?",
+        answer:
+          "Our support includes regular updates, security patches, performance monitoring, and technical assistance.",
+      },
+      {
+        question: "How quickly do you respond to issues?",
+        answer:
+          "We provide priority support with response times within 24 hours for standard issues and 4 hours for critical issues.",
+      },
+      {
+        question: "Do you provide training for content management?",
+        answer:
+          "Yes, we offer comprehensive training and documentation for your team to manage content effectively.",
+      },
+      {
+        question: "What happens after the website launches?",
+        answer:
+          "We monitor performance, provide regular maintenance, and offer continuous optimization recommendations.",
+      },
     ],
   },
 ];
@@ -253,6 +341,35 @@ export default function About() {
                           </span>
                         </motion.div>
                       ))}
+                    </div>
+
+                    {/* FAQ Accordion */}
+                    <div className="mt-8">
+                      <h4 className="text-lg font-semibold text-white mb-4">
+                        Frequently Asked Questions
+                      </h4>
+                      <div className="space-y-2">
+                        {processSteps[activeStep].faq.map((item, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, delay: index * 0.1 }}
+                          >
+                            <div className="collapse collapse-arrow bg-black/50 border border-white/10">
+                              <input type="radio" name={`faq-${activeStep}`} />
+                              <div
+                                className={`collapse-title text-white font-medium ${processSteps[activeStep].color}`}
+                              >
+                                {item.question}
+                              </div>
+                              <div className="collapse-content text-white/70">
+                                <p>{item.answer}</p>
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
