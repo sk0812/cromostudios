@@ -40,7 +40,7 @@ const projects = [
     image: "/portfolio/windsorcm.png",
     altText: "Windsor - Citizenship and Residency Services Website",
     tags: ["Next.js", "DaisyUI", "Framer Motion", "Resend"],
-    liveUrl: "/",
+    liveUrl: "https://windsorcm.com",
   },
 ];
 
