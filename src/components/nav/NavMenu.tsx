@@ -9,6 +9,7 @@ const navItems = [
   { name: "Portfolio", href: "#portfolio" },
   { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
+  { name: "Testimonials", href: "#testimonials" },
 ];
 
 export const NavMenu = () => {

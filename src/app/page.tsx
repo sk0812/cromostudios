@@ -4,6 +4,7 @@ import Services from "@/components/sections/Services";
 import Offer from "@/components/sections/Offer";
 import Portfolio from "@/components/sections/Portfolio";
 import About from "@/components/sections/About";
+import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import Script from "next/script";
@@ -62,6 +63,7 @@ export default function Home() {
         <Offer />
         <Portfolio />
         <About />
+        <Testimonials />
         <Contact />
         <Footer />
       </div>
