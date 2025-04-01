@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -81,8 +81,24 @@ const TestimonialCard = ({
 
 const Testimonials = () => {
   const [[page, direction], setPage] = useState([0, 0]);
-  const itemsPerPage = window.innerWidth < 768 ? 1 : 3;
+  const [itemsPerPage, setItemsPerPage] = useState(3);
   const totalPages = Math.ceil(testimonials.length / itemsPerPage);
+
+  // Handle responsive layout
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 1 : 3);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const paginate = (newDirection: number) => {
     const newPage = page + newDirection;
