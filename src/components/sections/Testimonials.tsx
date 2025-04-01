@@ -39,7 +39,7 @@ const testimonials = [
     name: "David Martinez",
     role: "CEO, Vino Nero",
     content:
-      "Cromo Studios were absolutely fantastic! From start to finish, they went above and beyond to make sure everything was perfect. They kept me updated at every stage, ensuring I always knew what was happening. Their attention to detail and commitment to quality really stood out. The final product exceeded my expectations, and I couldn’t be happier with the results. Their professionalism, creativity, and dedication made the whole process smooth.",
+      "Cromo Studios were absolutely fantastic! From start to finish, they went above and beyond to make sure everything was perfect. They kept me updated at every stage, ensuring I always knew what was happening. Their attention to detail and commitment to quality really stood out. The final product exceeded my expectations, and I couldn't be happier with the results. Their professionalism, creativity, and dedication made the whole process smooth.",
   },
 ];
 
@@ -47,34 +47,41 @@ const TestimonialCard = ({
   testimonial,
 }: {
   testimonial: (typeof testimonials)[0];
-}) => (
-  <div className="group h-[280px] hover:h-auto transition-[height] duration-500 ease-in-out border-2 border-white/10 hover:border-white/20 rounded-xl p-6 bg-black flex flex-col">
-    <div className="w-5 h-5 flex-shrink-0 mb-4">
-      <Quote className="w-full h-full text-white/20" />
-    </div>
-    <div className="relative flex-1 min-h-0">
-      <div className="relative h-full">
-        <p className="text-white/70 text-sm leading-relaxed line-clamp-6 group-hover:line-clamp-none">
-          {testimonial.content}
-        </p>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent group-hover:opacity-0 transition-opacity duration-500" />
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div
+      onClick={() => setIsExpanded(!isExpanded)}
+      className={`group h-[280px] ${isExpanded ? 'h-auto' : ''} transition-[height] duration-500 ease-in-out border-2 border-white/10 hover:border-white/20 rounded-xl p-6 bg-black flex flex-col cursor-pointer`}
+    >
+      <div className="w-5 h-5 flex-shrink-0 mb-4">
+        <Quote className="w-full h-full text-white/20" />
+      </div>
+      <div className="relative flex-1 min-h-0">
+        <div className="relative h-full">
+          <p className={`text-white/70 text-sm leading-relaxed ${isExpanded ? 'line-clamp-none' : 'line-clamp-6'}`}>
+            {testimonial.content}
+          </p>
+          <div className={`absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent transition-opacity duration-500 ${isExpanded ? 'opacity-0' : 'opacity-100'}`} />
+        </div>
+      </div>
+      <div className="flex items-center gap-3 mt-6">
+        <div className="w-[2px] h-4 bg-white/10" />
+        <div>
+          <h4 className="text-white/90 font-medium text-sm">
+            {testimonial.name}
+          </h4>
+          <p className="text-white/40 text-xs">{testimonial.role}</p>
+        </div>
       </div>
     </div>
-    <div className="flex items-center gap-3 mt-6">
-      <div className="w-[2px] h-4 bg-white/10" />
-      <div>
-        <h4 className="text-white/90 font-medium text-sm">
-          {testimonial.name}
-        </h4>
-        <p className="text-white/40 text-xs">{testimonial.role}</p>
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 const Testimonials = () => {
   const [[page, direction], setPage] = useState([0, 0]);
-  const itemsPerPage = 3;
+  const itemsPerPage = window.innerWidth < 768 ? 1 : 3;
   const totalPages = Math.ceil(testimonials.length / itemsPerPage);
 
   const paginate = (newDirection: number) => {
@@ -130,14 +137,14 @@ const Testimonials = () => {
         >
           <div className="flex items-center gap-2 mb-4">
             <div className="h-px w-8 bg-white/20"></div>
-            <span className="text-white/50 uppercase tracking-wider text-sm font-medium">
+            <span className="text-white/50 uppercase tracking-wider text-xs sm:text-sm font-medium">
               Testimonials
             </span>
           </div>
-          <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             Client Success Stories
           </h2>
-          <p className="text-white/70 text-lg">
+          <p className="text-white/70 text-base sm:text-lg">
             Don&apos;t just take our word for it. Here&apos;s what our clients
             have to say about working with us.
           </p>
@@ -164,7 +171,7 @@ const Testimonials = () => {
                   x: { type: "spring", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.2 },
                 }}
-                className="absolute w-full grid grid-cols-1 md:grid-cols-3 gap-6"
+                className="absolute w-full grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={1}
@@ -188,26 +195,25 @@ const Testimonials = () => {
           </div>
 
           {/* Navigation */}
-          <div className="flex justify-center items-center gap-8 mt-12">
+          <div className="flex justify-center items-center gap-4 sm:gap-8 mt-8 sm:mt-12">
             <button
               onClick={() => paginate(-1)}
               disabled={page === 0}
-              className="p-2 rounded-full border-2 border-white/10 hover:border-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="p-1.5 sm:p-2 rounded-full border-2 border-white/10 hover:border-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
               aria-label="Previous testimonials"
             >
-              <ChevronLeft className="w-5 h-5 text-white/70" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white/70" />
             </button>
 
-            <div className="flex gap-2">
+            <div className="flex gap-1.5 sm:gap-2">
               {[...Array(totalPages)].map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setPage([index, index > page ? 1 : -1])}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === page
-                      ? "bg-white/70 w-6"
-                      : "bg-white/20 hover:bg-white/40"
-                  }`}
+                  className={`w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full transition-all duration-300 ${index === page
+                    ? "bg-white/70 w-4 sm:w-6"
+                    : "bg-white/20 hover:bg-white/40"
+                    }`}
                   aria-label={`Go to testimonial page ${index + 1}`}
                 />
               ))}
@@ -216,10 +222,10 @@ const Testimonials = () => {
             <button
               onClick={() => paginate(1)}
               disabled={page === totalPages - 1}
-              className="p-2 rounded-full border-2 border-white/10 hover:border-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="p-1.5 sm:p-2 rounded-full border-2 border-white/10 hover:border-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
               aria-label="Next testimonials"
             >
-              <ChevronRight className="w-5 h-5 text-white/70" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white/70" />
             </button>
           </div>
         </div>

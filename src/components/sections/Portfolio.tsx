@@ -22,16 +22,16 @@ const projects = [
     image: "/portfolio/vidyalearning.png",
     altText: "Vidya Learning Platform - Online Tutoring Website",
     tags: ["Next.js", "Tailwind CSS", "Supabase", "Framer Motion"],
-    liveUrl: "https://vidya-learning-red.vercel.app/",
+    liveUrl: "https://www.vidyalearning.co.uk/",
   },
   {
-    title: "Childcare Website & Management System",
+    title: "Mentorship App Showcase ",
     description:
-      "A childcare website and management system built with Next.js and Tailwind CSS. Features include user authentication, database management, and a dashboard for managing children and staff.",
-    image: "/portfolio/kidshive.png",
-    altText: "Kids Hive - Childcare Management System and Website",
-    tags: ["Next.js", "DaisyUI", "MongoDB", "Resend"],
-    liveUrl: "https://kidshive.co.uk/",
+      "A website built to showcase the features and gain traction for a mentorship and career development app.",
+    image: "/portfolio/globalpurposeenterprise.png",
+    altText: "Global Purpose Enterprise - Mentorship & Career Development",
+    tags: ["Next.js", "Tailwind CSS", "Resend", "Framer Motion"],
+    liveUrl: "https://www.globalpurposeenterprise.com",
   },
   {
     title: "Citizenship & Residency Website",
@@ -42,6 +42,16 @@ const projects = [
     tags: ["Next.js", "DaisyUI", "Framer Motion", "Resend"],
     liveUrl: "https://windsorcm.com",
   },
+  {
+    title: "Childcare Website & Management System",
+    description:
+      "A childcare website and management system built with Next.js and Tailwind CSS. Features include user authentication, database management, and a dashboard for managing children and staff.",
+    image: "/portfolio/kidshive.png",
+    altText: "Kids Hive - Childcare Management System and Website",
+    tags: ["Next.js", "DaisyUI", "MongoDB", "Resend"],
+    liveUrl: "https://kidshive.co.uk/",
+  },
+
 ];
 
 export default function Portfolio() {
@@ -87,7 +97,12 @@ export default function Portfolio() {
               className="group w-full"
             >
               {/* Project Image */}
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-8 bg-white/5">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative aspect-[4/3] rounded-2xl overflow-hidden mb-8 bg-white/5 cursor-pointer group-hover:opacity-90 transition-opacity"
+              >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
                 <Image
                   src={project.image}
@@ -98,7 +113,7 @@ export default function Portfolio() {
                   loading="lazy"
                   quality={90}
                 />
-              </div>
+              </a>
 
               {/* Project Info */}
               <div className="space-y-4">
