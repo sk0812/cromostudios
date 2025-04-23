@@ -6,6 +6,15 @@ import Image from "next/image";
 
 const projects = [
   {
+    title: "Citizenship & Residency Website",
+    description:
+      "A professional citizenship and residency website built with Next.js and Tailwind CSS. Features include responsive design, animations, and a contact form.",
+    image: "/portfolio/windsorcm.png",
+    altText: "Windsor - Citizenship and Residency Services Website",
+    tags: ["Next.js", "DaisyUI", "Framer Motion", "Resend"],
+    liveUrl: "https://windsorcm.com",
+  },
+  {
     title: "E-Commerce Platform",
     description:
       "A modern e-commerce platform built with Wordpress and Woocommerce. Features include real-time inventory, dynamic product filtering, and seamless checkout.",
@@ -14,6 +23,14 @@ const projects = [
       "Cricket Armoury E-commerce Website - Cricket Equipment Online Store",
     tags: ["Wordpress", "Woocommerce", "Brizy", "Stripe"],
     liveUrl: "https://cricketarmoury.com",
+  },
+  {
+    title: "Floral Architect Website",
+    description: "a floral architect website built with Next.js and Tailwind CSS. Features include responsive design, animations, and a contact form.",
+    image: "/portfolio/thedecorcollective.webp",
+    altText: "The Decor Collective - Floral Design Website",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Resend"],
+    liveUrl: "https://thedecorcollective.co.uk/",
   },
   {
     title: "Tutoring Website",
@@ -33,15 +50,7 @@ const projects = [
     tags: ["Next.js", "Tailwind CSS", "Resend", "Framer Motion"],
     liveUrl: "https://www.globalpurposeenterprise.com",
   },
-  {
-    title: "Citizenship & Residency Website",
-    description:
-      "A professional citizenship and residency website built with Next.js and Tailwind CSS. Features include responsive design, animations, and a contact form.",
-    image: "/portfolio/windsorcm.png",
-    altText: "Windsor - Citizenship and Residency Services Website",
-    tags: ["Next.js", "DaisyUI", "Framer Motion", "Resend"],
-    liveUrl: "https://windsorcm.com",
-  },
+
   {
     title: "Childcare Website & Management System",
     description:

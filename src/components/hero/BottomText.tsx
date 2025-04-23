@@ -12,7 +12,7 @@ export const BottomText = () => {
         type: "spring",
         stiffness: 150,
       }}
-      className="mt-12 max-w-5xl text-2xl"
+      className="mt-12 max-w-5xl text-2xl text-white"
     >
       We are architects of the digital world, where every pixel and block comes
       together to shape an immersive experience which
