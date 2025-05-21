@@ -15,14 +15,14 @@ const projects = [
     liveUrl: "https://windsorcm.com",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Venture Capital Website",
     description:
-      "A modern e-commerce platform built with Wordpress and Woocommerce. Features include real-time inventory, dynamic product filtering, and seamless checkout.",
-    image: "/portfolio/cricketarmoury.png",
+      "A modern venture capital website built with Wordpress and Brizy. Features include responsive design, animations, and a contact form.",
+    image: "/portfolio/ryse.png",
     altText:
-      "Cricket Armoury E-commerce Website - Cricket Equipment Online Store",
-    tags: ["Wordpress", "Woocommerce", "Brizy", "Stripe"],
-    liveUrl: "https://cricketarmoury.com",
+      "Ryse Capital - Venture Capital Website",
+    tags: ["Wordpress", "Brizy", "PHP"],
+    liveUrl: "https://ryseam.com",
   },
   {
     title: "Floral Architect Website",
